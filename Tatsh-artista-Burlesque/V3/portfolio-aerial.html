@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aerial Portfolio | Tatsh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root { color-scheme: dark; --bg: #0c070a; --ink: #fff7ef; --muted: #d7bdae; --line: rgba(255,232,211,.18); --gold: #d6a85b; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: radial-gradient(circle at 16% 0%, rgba(109,23,52,.36), transparent 28%), var(--bg); color: var(--ink); font-family: Inter, system-ui, sans-serif; }
+      a { color: inherit; text-decoration: none; }
+      img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      header, footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px clamp(18px, 5vw, 64px); border-bottom: 1px solid var(--line); }
+      footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted); }
+      .brand { font-family: "Bebas Neue", Impact, sans-serif; font-size: 2rem; }
+      .nav-toggle { display: none; }
+      .site-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: .86rem; font-weight: 900; text-transform: uppercase; color: rgba(255,247,239,.72); }
+      .nav-group { position: relative; padding-block: 14px; margin-block: -14px; }
+      .nav-parent { padding: 0; color: rgba(255,247,239,.72); background: transparent; border: 0; font: inherit; text-transform: inherit; cursor: pointer; }
+      .subnav { position: absolute; top: 100%; left: 50%; min-width: 220px; display: grid; gap: 4px; padding: 12px; background: rgba(18,8,14,.96); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 24px 90px rgba(0,0,0,.52); opacity: 0; pointer-events: none; transform: translate(-50%, 8px); transition: opacity 180ms ease, transform 180ms ease; z-index: 3; }
+      .subnav::before { content: ""; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
+      .subnav a { padding: 10px 12px; border-radius: 6px; }
+      .nav-group:hover .subnav, .nav-group:focus-within .subnav, .nav-group.open .subnav { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+      .subnav a:hover { background: rgba(214,168,91,.12); color: var(--ink); }
+      main { padding: 72px clamp(18px, 5vw, 64px); }
+      .area-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 38px; }
+      .area-nav a { min-height: 38px; display: inline-flex; align-items: center; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; color: rgba(255,247,239,.72); font-size: .78rem; font-weight: 900; text-transform: uppercase; }
+      .area-nav a.active, .area-nav a:hover { color: #17100a; background: var(--gold); border-color: var(--gold); }
+      .eyebrow { color: var(--gold); font-size: .78rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+      h1 { max-width: 960px; margin: 0 0 18px; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(4rem, 12vw, 9rem); line-height: .85; }
+      p { max-width: 760px; color: var(--muted); line-height: 1.7; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+      .button { min-height: 46px; display: inline-flex; align-items: center; padding: 0 18px; border: 1px solid var(--line); border-radius: 6px; font-weight: 900; text-transform: uppercase; }
+      .button.primary { background: var(--gold); border-color: var(--gold); color: #17100a; }
+      .gallery { display: grid; grid-template-columns: 1.2fr .8fr .8fr; grid-auto-rows: 280px; gap: 14px; margin-top: 46px; }
+      .gallery a { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #171015; }
+      .gallery a:first-child { grid-row: span 2; }
+      .gallery span { position: absolute; left: 18px; bottom: 18px; color: var(--gold); font-weight: 900; text-transform: uppercase; }
+      @media (max-width: 800px) { header { position: relative; } footer { flex-direction: column; align-items: flex-start; } .nav-toggle { width: 44px; height: 44px; display: grid; place-content: center; gap: 6px; background: rgba(255,255,255,.08); border: 1px solid var(--line); border-radius: 6px; } .nav-toggle span { width: 20px; height: 2px; background: var(--ink); } .site-nav { position: absolute; top: 78px; left: 18px; right: 18px; z-index: 10; display: none; flex-direction: column; align-items: flex-start; padding: 18px; background: rgba(12,7,10,.96); border: 1px solid var(--line); border-radius: 8px; gap: 14px; } .site-nav.open { display: flex; } .nav-group { display: grid; gap: 6px; padding-block: 0; margin-block: 0; } .subnav { position: static; min-width: 0; max-height: 0; overflow: hidden; padding: 0 0 0 12px; opacity: 0; pointer-events: none; transform: none; box-shadow: none; background: transparent; border: 0; border-left: 1px solid rgba(214,168,91,.28); border-radius: 0; transition: max-height 220ms ease, opacity 180ms ease; } .subnav::before { display: none; } .subnav a { padding: 8px 0; border-radius: 0; } .nav-group.open .subnav { max-height: 260px; opacity: 1; pointer-events: auto; } .gallery { grid-template-columns: 1fr; grid-auto-rows: 300px; } .gallery a:first-child { grid-row: span 1; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html#home">Tatsh</a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" aria-label="Menu principal" data-nav>
+        <a href="index.html#portfolio">Portfolio</a>
+        <div class="nav-group" data-nav-group>
+          <button class="nav-parent" type="button" aria-expanded="false" data-subnav-toggle>Performances</button>
+          <div class="subnav" aria-label="Áreas de performance" data-subnav>
+            <a href="portfolio-fire.html">Fire</a>
+            <a href="portfolio-burlesque.html">Burlesque</a>
+            <a class="active" href="portfolio-aerial.html">Aerials</a>
+            <a href="portfolio-pole.html">Pole Dancing</a>
+            <a href="portfolio-modeling.html">Modeling</a>
+          </div>
+        </div>
+        <a href="index.html#about">Sobre</a>
+        <a href="index.html#booking">Booking</a>
+      </nav>
+    </header>
+    <main>
+      <nav class="area-nav" aria-label="Áreas de performance">
+        <a href="portfolio-fire.html">Fire</a>
+        <a href="portfolio-burlesque.html">Burlesque</a>
+        <a class="active" href="portfolio-aerial.html">Aerials</a>
+        <a href="portfolio-pole.html">Pole Dancing</a>
+        <a href="portfolio-modeling.html">Modeling</a>
+      </nav>
+      <p class="eyebrow">Aerial portfolio</p>
+      <h1>Aerial performance</h1>
+      <p>Mockup de página interna para apresentar números aéreos, requisitos técnicos, formatos de palco e imagens que mostrem movimento, altura e presença visual.</p>
+      <div class="actions">
+        <a class="button primary" href="index.html#booking">Pedir orçamento</a>
+        <a class="button" href="index.html#portfolio">Voltar ao portfolio</a>
+      </div>
+      <section class="gallery" aria-label="Galeria Aerial">
+        <a href="index.html#booking"><img src="https://images.pexels.com/photos/23638607/pexels-photo-23638607.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Performer em aerial silks"><span>Silks act</span></a>
+        <a href="index.html#booking"><img src="https://images.pexels.com/photos/3822191/pexels-photo-3822191.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Movimento acrobático"><span>Motion study</span></a>
+        <a href="index.html#booking"><img src="https://images.pexels.com/photos/32616622/pexels-photo-32616622.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Aerial performer em pose dramática"><span>Vertical scene</span></a>
+        <a href="index.html#booking"><img src="https://images.pexels.com/photos/29715464/pexels-photo-29715464.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Aerial silk performer em pose elegante"><span>Body line</span></a>
+        <a href="index.html#booking"><img src="https://images.pexels.com/photos/37129661/pexels-photo-37129661.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Aerial hoop performer com luz dramática"><span>Rigging mood</span></a>
+      </section>
+    </main>
+    <footer><span>Protótipo visual por JSIMOES // BRANDING & WEB</span><a href="mailto:tatsh.sa@gmail.com">tatsh.sa@gmail.com</a></footer>
+    <script>
+      const subnavToggle = document.querySelector("[data-subnav-toggle]");
+      const navGroup = document.querySelector("[data-nav-group]");
+      const navToggle = document.querySelector("[data-nav-toggle]");
+      const nav = document.querySelector("[data-nav]");
+      navToggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      subnavToggle.addEventListener("click", () => {
+        const isOpen = navGroup.classList.toggle("open");
+        subnavToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      nav.addEventListener("click", (event) => {
+        if (event.target.closest("[data-subnav-toggle]")) return;
+        nav.classList.remove("open");
+        navGroup.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        subnavToggle.setAttribute("aria-expanded", "false");
+      });
+    </script>
+  </body>
+</html>
+
+
