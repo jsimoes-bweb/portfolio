@@ -1,0 +1,1139 @@
+﻿<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio de Tatsh, performer de fire, aerial e burlesque disponível para eventos em Portugal e worldwide bookings.">
+    <title>Tatsh | Fire, Aerial & Burlesque Performer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+:root {
+  color-scheme: dark;
+  --bg: #0c070a;
+  --panel: #171015;
+  --ink: #fff7ef;
+  --muted: #d7bdae;
+  --line: rgba(255, 232, 211, 0.18);
+  --gold: #d6a85b;
+  --ember: #c64637;
+  --wine: #6d1734;
+  --plum: #2b1223;
+  --rose: #b86b77;
+  --teal: #8b6b96;
+  --fire: #e35a38;
+  --burlesque: #c1496d;
+  --aerial: #7f8ed8;
+  --pole: #b77ad6;
+  --modeling: #d7b36a;
+  --shadow: 0 24px 90px rgba(0, 0, 0, 0.52);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(109, 23, 52, 0.32), transparent 28%),
+    linear-gradient(180deg, #0c070a, #09080b 48%, #10070b);
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px clamp(18px, 5vw, 64px);
+  background: linear-gradient(180deg, rgba(11, 13, 16, 0.88), rgba(11, 13, 16, 0));
+}
+
+.site-header.scrolled {
+  background: rgba(12, 7, 10, 0.9);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0;
+}
+
+h1,
+h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.brand {
+  font-size: 2rem;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.site-nav a,
+.nav-parent {
+  color: rgba(251, 246, 239, 0.78);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+
+.site-nav a:hover,
+.nav-group:hover .nav-parent,
+.nav-group.open .nav-parent {
+  color: var(--ink);
+}
+
+.nav-group {
+  position: relative;
+  padding-block: 14px;
+  margin-block: -14px;
+}
+
+.subnav {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  min-width: 220px;
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  background: rgba(18, 8, 14, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.subnav::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -16px;
+  height: 16px;
+}
+
+.nav-group:hover .subnav,
+.nav-group:focus-within .subnav,
+.nav-group.open .subnav {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.subnav a {
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+.subnav a:hover {
+  background: rgba(214, 168, 91, 0.12);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: grid;
+  align-items: end;
+  padding: 180px clamp(18px, 5vw, 64px) 56px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-video,
+.hero-fallback,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video {
+  object-fit: cover;
+  z-index: -3;
+}
+
+.hero-fallback {
+  z-index: -4;
+  background:
+    linear-gradient(90deg, rgba(12, 7, 10, 0.66), rgba(43, 18, 35, 0.28)),
+    url("https://images.pexels.com/photos/13691914/pexels-photo-13691914.jpeg?auto=compress&cs=tinysrgb&w=1800") center / cover;
+}
+
+.hero-overlay {
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(12, 7, 10, 0.95), rgba(43, 18, 35, 0.58) 48%, rgba(12, 7, 10, 0.22)),
+    linear-gradient(0deg, rgba(12, 7, 10, 0.96), rgba(12, 7, 10, 0.16) 42%);
+}
+
+.hero-content {
+  width: min(780px, 100%);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: clamp(5rem, 15vw, 12rem);
+  line-height: 0.82;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  line-height: 0.92;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.hero-copy {
+  max-width: 600px;
+  color: rgba(251, 246, 239, 0.82);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  line-height: 1.55;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.button.primary {
+  background: var(--gold);
+  color: #17100a;
+  border-color: var(--gold);
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-card {
+  position: absolute;
+  right: clamp(18px, 5vw, 64px);
+  bottom: 56px;
+  width: min(330px, calc(100% - 36px));
+  padding: 22px;
+  background: rgba(21, 23, 28, 0.76);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.hero-card span,
+.hero-card a {
+  color: var(--muted);
+}
+
+.hero-card strong {
+  display: block;
+  margin: 8px 0 14px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.band,
+.section,
+.site-footer {
+  padding: 84px clamp(18px, 5vw, 64px);
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(110px, 180px)) 1fr;
+  gap: 28px;
+  align-items: center;
+  background: #111418;
+  border-block: 1px solid var(--line);
+}
+
+.intro-stat strong {
+  display: block;
+  font-size: 2.2rem;
+}
+
+.intro-stat span,
+.intro p,
+.about p,
+.service-list p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.intro p {
+  max-width: 680px;
+  margin: 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+#portfolio {
+  background:
+    linear-gradient(180deg, rgba(214, 168, 91, 0.08), transparent 140px),
+    linear-gradient(90deg, rgba(109, 23, 52, 0.2), rgba(12, 7, 10, 0) 56%);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.filter {
+  min-height: 38px;
+  padding: 0 16px;
+  color: var(--ink);
+  background: #171a20;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.filter.active {
+  color: #17100a;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.portfolio-themes {
+  display: grid;
+  gap: 26px;
+}
+
+.portfolio-theme {
+  --accent: var(--gold);
+  display: grid;
+  grid-template-columns: minmax(220px, 0.42fr) 1fr;
+  gap: clamp(18px, 4vw, 42px);
+  align-items: end;
+  padding: clamp(22px, 4vw, 34px);
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  border-radius: 8px;
+  background:
+    linear-gradient(115deg, color-mix(in srgb, var(--accent) 18%, transparent), rgba(255, 255, 255, 0.025) 42%, rgba(0, 0, 0, 0.16)),
+    rgba(18, 9, 14, 0.76);
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.26);
+}
+
+.portfolio-theme:last-child {
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+}
+
+.portfolio-theme-copy p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.portfolio-theme-copy .eyebrow,
+.portfolio-item span,
+.service-list span {
+  color: var(--accent);
+}
+
+.portfolio-theme-copy .button {
+  margin-top: 10px;
+}
+
+.mockup-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  grid-template-rows: repeat(2, 190px);
+  gap: 12px;
+}
+
+.portfolio-item {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--panel);
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line));
+  color: var(--ink);
+}
+
+.portfolio-item.featured {
+  grid-row: span 2;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.04);
+}
+
+.portfolio-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.74), transparent 54%);
+}
+
+.portfolio-item div:last-child {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1;
+}
+
+.portfolio-item span {
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.portfolio-item h3 {
+  margin: 6px 0 0;
+  font-size: 1.35rem;
+}
+
+.fire-card h3,
+.service-fire h3,
+.burlesque-card h3,
+.service-burlesque h3,
+.aerial-card h3,
+.service-aerial h3,
+.pole-card h3,
+.service-pole h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.72rem;
+  letter-spacing: 0;
+}
+
+.portfolio-theme:has(.fire-card),
+.fire-card {
+  --accent: var(--fire);
+}
+
+.portfolio-theme:has(.burlesque-card),
+.burlesque-card {
+  --accent: var(--burlesque);
+}
+
+.portfolio-theme:has(.aerial-card),
+.aerial-card {
+  --accent: var(--aerial);
+}
+
+.portfolio-theme:has(.pole-card),
+.pole-card {
+  --accent: var(--pole);
+}
+
+.portfolio-theme:has(.modeling-card),
+.modeling-card {
+  --accent: var(--modeling);
+}
+
+.service-fire {
+  --accent: var(--fire);
+}
+
+.service-burlesque {
+  --accent: var(--burlesque);
+}
+
+.service-aerial {
+  --accent: var(--aerial);
+}
+
+.service-pole {
+  --accent: var(--pole);
+}
+
+.service-workshop {
+  --accent: var(--modeling);
+}
+
+.modeling-card h3,
+.service-workshop h3 {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1.24rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services {
+  background:
+    linear-gradient(135deg, rgba(127, 142, 216, 0.13), transparent 32%),
+    linear-gradient(90deg, rgba(109, 23, 52, 0.22), rgba(183, 122, 214, 0.08) 62%, transparent),
+    #09080b;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  background: transparent;
+  border: 0;
+}
+
+.service-list article {
+  min-height: 260px;
+  padding: 28px;
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--accent) 18%, transparent), rgba(255, 255, 255, 0.026) 48%),
+    #151016;
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, var(--line));
+  border-radius: 8px;
+}
+
+.service-list span {
+  font-weight: 900;
+}
+
+.service-list h3 {
+  margin-top: 50px;
+  font-size: 1.35rem;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) 1fr;
+  gap: clamp(32px, 8vw, 120px);
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(214, 168, 91, 0.14), transparent 45%),
+    linear-gradient(135deg, rgba(109, 23, 52, 0.38), rgba(23, 16, 21, 0.88)),
+    #151016;
+}
+
+.about p:last-child {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.booking {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(28px, 7vw, 96px);
+  align-items: start;
+}
+
+.booking .section-heading {
+  display: block;
+  margin: 0;
+}
+
+.booking-form {
+  display: grid;
+  gap: 16px;
+}
+
+.booking-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 15px 16px;
+  color: var(--ink);
+  background: #15171c;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font: inherit;
+}
+
+.booking-form textarea {
+  resize: vertical;
+}
+
+.booking-form .button {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: var(--muted);
+}
+
+.site-footer small {
+  color: rgba(251, 246, 239, 0.46);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: 86vh;
+  }
+
+  .hero-card {
+    position: static;
+    margin-top: 34px;
+  }
+
+  .intro,
+  .about,
+  .booking {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-theme,
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    padding-block: 16px;
+  }
+
+  .nav-toggle {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+
+  .nav-toggle span {
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 72px;
+    left: 18px;
+    right: 18px;
+    display: none;
+    flex-direction: column;
+    padding: 18px;
+    background: rgba(11, 13, 16, 0.96);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  .nav-group {
+    display: grid;
+    gap: 6px;
+    padding-block: 0;
+    margin-block: 0;
+  }
+
+  .subnav {
+    position: static;
+    min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 0 0 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    border: 0;
+    border-left: 1px solid rgba(214, 168, 91, 0.28);
+    border-radius: 0;
+    transition: max-height 220ms ease, opacity 180ms ease;
+  }
+
+  .nav-group.open .subnav {
+    max-height: 260px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .subnav::before {
+    display: none;
+  }
+
+  .subnav a {
+    padding: 8px 0;
+    color: rgba(251, 246, 239, 0.66);
+    border-radius: 0;
+  }
+
+  .subnav a:hover {
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 128px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .intro {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .intro p {
+    grid-column: 1 / -1;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .mockup-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 260px);
+  }
+
+  .portfolio-item.featured {
+    grid-row: span 1;
+  }
+
+  .service-list article {
+    min-height: auto;
+  }
+
+  .service-list h3 {
+    margin-top: 28px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer small {
+    text-align: left;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="Tatsh homepage">Tatsh</a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" data-nav>
+        <a href="#portfolio">Portfolio</a>
+        <div class="nav-group" data-nav-group>
+          <button class="nav-parent" type="button" aria-expanded="false" data-subnav-toggle>Performances</button>
+          <div class="subnav" aria-label="Áreas de performance" data-subnav>
+            <a href="portfolio-fire.html">Fire</a>
+            <a href="portfolio-burlesque.html">Burlesque</a>
+            <a href="portfolio-aerial.html">Aerials</a>
+            <a href="portfolio-pole.html">Pole Dancing</a>
+            <a href="portfolio-modeling.html">Modeling</a>
+          </div>
+        </div>
+        <a href="#about">Sobre</a>
+        <a href="#booking">Booking</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline poster="https://images.pexels.com/photos/13691914/pexels-photo-13691914.jpeg?auto=compress&cs=tinysrgb&w=1800" aria-label="Video stock de performance artística em palco">
+          <source src="assets/home-video.mp4" type="video/mp4">
+          <source src="https://www.pexels.com/download/video/14524407/" type="video/mp4">
+        </video>
+        <div class="hero-fallback" aria-hidden="true"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Burlesque • Fire • Aerial • Pole Dancing • Modeling</p>
+          <h1>Tatsh</h1>
+          <p class="hero-copy">Performances visuais para eventos, palcos, marcas e produções que pedem presença, técnica e impacto.</p>
+          <div class="hero-actions" aria-label="Ações principais">
+            <a class="button primary" href="#booking">Pedir orçamento</a>
+            <a class="button secondary" href="#portfolio">Ver portfolio</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Resumo de booking">
+          <span>PT | Worldwide bookings</span>
+          <strong>Burlesque, fire, aerial & pole performer</strong>
+          <a href="mailto:tatsh.sa@gmail.com">tatsh.sa@gmail.com</a>
+        </aside>
+      </section>
+
+      <section class="section" id="portfolio">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Momentos em cena</h2>
+        </div>
+        <div class="portfolio-themes">
+          <article class="portfolio-theme">
+            <div class="portfolio-theme-copy fire-card">
+              <p class="eyebrow">Fire</p>
+              <h3>Fire performance</h3>
+              <p>Atos com chama para eventos outdoor, festivais, ativações de marca e produções com impacto visual.</p>
+              <a class="button secondary" href="portfolio-fire.html">Ver portfolio Fire completo</a>
+            </div>
+            <div class="mockup-grid">
+              <a class="portfolio-item featured fire-card" href="portfolio-fire.html">
+                <img src="https://images.pexels.com/photos/16897073/pexels-photo-16897073.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Fire dancer com ferramentas em chama">
+                <div><span>Fire</span><h3>Outdoor act</h3></div>
+              </a>
+              <a class="portfolio-item fire-card" href="portfolio-fire.html">
+                <img src="https://images.pexels.com/photos/5199173/pexels-photo-5199173.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Performance com fogo durante a noite">
+                <div><span>Fire</span><h3>Night show</h3></div>
+              </a>
+              <a class="portfolio-item fire-card" href="portfolio-fire.html">
+                <img src="https://images.pexels.com/photos/3601097/pexels-photo-3601097.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fogo em ambiente exterior">
+                <div><span>Fire</span><h3>Visual impact</h3></div>
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-theme">
+            <div class="portfolio-theme-copy burlesque-card">
+              <p class="eyebrow">Burlesque</p>
+              <h3>Cabaret set</h3>
+              <p>Performance de palco com estética clássica, presença cénica, humor e detalhe visual para ambientes intimistas ou grandes salas.</p>
+              <a class="button secondary" href="portfolio-burlesque.html">Ver portfolio Burlesque completo</a>
+            </div>
+            <div class="mockup-grid">
+              <a class="portfolio-item featured burlesque-card" href="portfolio-burlesque.html">
+                <img src="https://images.pexels.com/photos/13691914/pexels-photo-13691914.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Cabaret performer com figurino de penas">
+                <div><span>Burlesque</span><h3>Cabaret mood</h3></div>
+              </a>
+              <a class="portfolio-item burlesque-card" href="portfolio-burlesque.html">
+                <img src="https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Cortinas de teatro iluminadas">
+                <div><span>Burlesque</span><h3>Stage detail</h3></div>
+              </a>
+              <a class="portfolio-item burlesque-card" href="portfolio-burlesque.html">
+                <img src="https://images.pexels.com/photos/6896018/pexels-photo-6896018.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Performer em palco com luz dramática">
+                <div><span>Burlesque</span><h3>Classic act</h3></div>
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-theme">
+            <div class="portfolio-theme-copy aerial-card">
+              <p class="eyebrow">Aerials</p>
+              <h3>Aerial performance</h3>
+              <p>Números aéreos adaptáveis a palcos, estruturas técnicas, eventos especiais e produções que pedem verticalidade.</p>
+              <a class="button secondary" href="portfolio-aerial.html">Ver portfolio Aerial completo</a>
+            </div>
+            <div class="mockup-grid">
+              <a class="portfolio-item featured aerial-card" href="portfolio-aerial.html">
+                <img src="https://images.pexels.com/photos/23638607/pexels-photo-23638607.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Performer em aerial silks">
+                <div><span>Aerials</span><h3>Silks act</h3></div>
+              </a>
+              <a class="portfolio-item aerial-card" href="portfolio-aerial.html">
+                <img src="https://images.pexels.com/photos/3822191/pexels-photo-3822191.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Movimento acrobático em estúdio">
+                <div><span>Aerials</span><h3>Motion study</h3></div>
+              </a>
+              <a class="portfolio-item aerial-card" href="portfolio-aerial.html">
+                <img src="https://images.pexels.com/photos/32616622/pexels-photo-32616622.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Aerial performer em pose dramática">
+                <div><span>Aerials</span><h3>Vertical scene</h3></div>
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-theme">
+            <div class="portfolio-theme-copy pole-card">
+              <p class="eyebrow">Pole Dancing</p>
+              <h3>Pole performance</h3>
+              <p>Números de pole com força, flexibilidade e presença visual, adaptáveis a palco, vídeo, aulas ou eventos artísticos.</p>
+              <a class="button secondary" href="portfolio-pole.html">Ver portfolio Pole completo</a>
+            </div>
+            <div class="mockup-grid">
+              <a class="portfolio-item featured pole-card" href="portfolio-pole.html">
+                <img src="https://images.pexels.com/photos/35189560/pexels-photo-35189560.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Pole dancer em estúdio">
+                <div><span>Pole</span><h3>Studio act</h3></div>
+              </a>
+              <a class="portfolio-item pole-card" href="portfolio-pole.html">
+                <img src="https://images.pexels.com/photos/35189617/pexels-photo-35189617.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Pole dance em estúdio monocromático">
+                <div><span>Pole</span><h3>Strength line</h3></div>
+              </a>
+              <a class="portfolio-item pole-card" href="portfolio-pole.html">
+                <img src="https://images.pexels.com/photos/17286941/pexels-photo-17286941.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Mulher em pole dancing num espaço interior">
+                <div><span>Pole</span><h3>Movement</h3></div>
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-theme">
+            <div class="portfolio-theme-copy modeling-card">
+              <p class="eyebrow">Modeling</p>
+              <h3>Editorial shoot</h3>
+              <p>Imagem, styling e direção visual para campanhas, retratos performativos, press kit e materiais promocionais.</p>
+              <a class="button secondary" href="portfolio-modeling.html">Ver portfolio Modeling completo</a>
+            </div>
+            <div class="mockup-grid">
+              <a class="portfolio-item featured modeling-card" href="portfolio-modeling.html">
+                <img src="https://images.pexels.com/photos/31741273/pexels-photo-31741273.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Retrato editorial de performer com styling clássico">
+                <div><span>Modeling</span><h3>Editorial portrait</h3></div>
+              </a>
+              <a class="portfolio-item modeling-card" href="portfolio-modeling.html">
+                <img src="https://images.pexels.com/photos/30381617/pexels-photo-30381617.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Retrato feminino editorial com styling artístico">
+                <div><span>Modeling</span><h3>Press kit</h3></div>
+              </a>
+              <a class="portfolio-item modeling-card" href="portfolio-modeling.html">
+                <img src="https://images.pexels.com/photos/3764579/pexels-photo-3764579.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Sessão fotográfica editorial">
+                <div><span>Modeling</span><h3>Campaign mood</h3></div>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section services" id="performances">
+        <div class="section-heading">
+          <p class="eyebrow">Performances</p>
+          <h2>Áreas artísticas</h2>
+        </div>
+        <div class="service-list">
+          <article class="service-fire">
+            <span>01</span>
+            <h3>Fire performance</h3>
+            <p>Atos de impacto para outdoor, festivais, eventos privados e ativações de marca.</p>
+          </article>
+          <article class="service-burlesque">
+            <span>02</span>
+            <h3>Burlesque act</h3>
+            <p>Performance de palco com estética clássica, humor, presença cénica e detalhe visual.</p>
+          </article>
+          <article class="service-aerial">
+            <span>03</span>
+            <h3>Aerials</h3>
+            <p>Números aéreos adaptáveis a palcos, estruturas técnicas e eventos especiais.</p>
+          </article>
+          <article class="service-pole">
+            <span>04</span>
+            <h3>Pole Dancing</h3>
+            <p>Performance técnica e expressiva, focada em força, flexibilidade, presença e movimento cénico.</p>
+          </article>
+          <article class="service-workshop">
+            <span>05</span>
+            <h3>Workshops</h3>
+            <p>Aulas e sessões orientadas para técnica, confiança, movimento e criação performativa.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about band" id="about">
+        <div>
+          <p class="eyebrow">Sobre</p>
+          <h2>Arte performativa com energia de palco e direção visual.</h2>
+        </div>
+        <p>Tatsh é performer de fire, aerials e burlesque, disponível para bookings em Portugal e internacionalmente. Esta página pode crescer como portfolio vivo: vídeos recentes, calendário, imprensa, testemunhos e materiais para promotores.</p>
+      </section>
+
+      <section class="section booking" id="booking">
+        <div class="section-heading">
+          <p class="eyebrow">Booking</p>
+          <h2>Vamos falar do seu evento</h2>
+        </div>
+        <form class="booking-form">
+          <label>
+            Nome
+            <input type="text" name="name" autocomplete="name" placeholder="O teu nome">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" placeholder="email@exemplo.com">
+          </label>
+          <label>
+            Tipo de evento
+            <select name="event">
+              <option>Evento privado</option>
+              <option>Festival</option>
+              <option>Produção audiovisual</option>
+              <option>Workshop</option>
+              <option>Outro</option>
+            </select>
+          </label>
+          <label>
+            Mensagem
+            <textarea name="message" rows="5" placeholder="Data, local, tipo de performance e detalhes relevantes"></textarea>
+          </label>
+          <button class="button primary" type="submit">Enviar pedido</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <strong>Tatsh</strong>
+      <div>
+        <a href="mailto:tatsh.sa@gmail.com">tatsh.sa@gmail.com</a>
+        <a href="https://youtube.com/@tatshdanger">YouTube</a>
+        <a href="https://instagram.com/tatsh7">Instagram</a>
+      </div>
+      <small>Protótipo visual por JSIMOES // BRANDING &amp; WEB</small>
+    </footer>
+
+    <script>
+const header = document.querySelector("[data-header]");
+const nav = document.querySelector("[data-nav]");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const subnavToggle = document.querySelector("[data-subnav-toggle]");
+const navGroup = document.querySelector("[data-nav-group]");
+const filters = document.querySelectorAll("[data-filter]");
+const portfolioItems = document.querySelectorAll("[data-category]");
+const bookingForm = document.querySelector(".booking-form");
+
+const updateHeader = () => {
+  header.classList.toggle("scrolled", window.scrollY > 24);
+};
+
+updateHeader();
+window.addEventListener("scroll", updateHeader, { passive: true });
+
+navToggle.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+subnavToggle.addEventListener("click", () => {
+  const isOpen = navGroup.classList.toggle("open");
+  subnavToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+nav.addEventListener("click", (event) => {
+  if (event.target.closest("[data-subnav-toggle]")) return;
+  nav.classList.remove("open");
+  navGroup.classList.remove("open");
+  navToggle.setAttribute("aria-expanded", "false");
+  subnavToggle.setAttribute("aria-expanded", "false");
+});
+
+filters.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    filters.forEach((item) => item.classList.toggle("active", item === button));
+    portfolioItems.forEach((item) => {
+      item.classList.toggle("hidden", filter !== "all" && item.dataset.category !== filter);
+    });
+  });
+});
+
+bookingForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(bookingForm);
+  const subject = encodeURIComponent("Pedido de booking via site");
+  const body = encodeURIComponent(
+    `Nome: ${formData.get("name") || ""}\nEmail: ${formData.get("email") || ""}\nEvento: ${formData.get("event") || ""}\n\n${formData.get("message") || ""}`
+  );
+
+  window.location.href = `mailto:tatsh.sa@gmail.com?subject=${subject}&body=${body}`;
+});
+
+    </script>
+  </body>
+</html>
+

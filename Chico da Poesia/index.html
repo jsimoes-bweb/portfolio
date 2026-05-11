@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chico da Poesia | Comedia, teatro e poesia</title>
+    <meta
+      name="description"
+      content="Site oficial de Chico da Poesia: datas, trabalhos, loja, contactos e novidades."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Chico da Poesia">
+        <span class="brand-mark">CP</span>
+        <span>Chico da Poesia</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegacao principal">
+        <a href="#datas">Datas</a>
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#loja">Loja</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contactos">Contactos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow">Comedia. Teatro. Poesia.</p>
+          <h1>Chico da Poesia</h1>
+          <p class="hero-text">
+            A verdade com riso: espetaculos ao vivo, poesia dita sem cerimonia,
+            personagens, historias de palco e uma loja feita para levar a cena consigo.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#datas">Ver proximas datas</a>
+            <a class="button secondary" href="#loja">Comprar produtos</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Ilustracao de Chico da Poesia em palco">
+          <img src="assets/chico-da-poesia.png" alt="Cartaz ilustrado de Chico da Poesia com microfone">
+        </div>
+      </section>
+
+      <section class="strip" aria-label="Resumo">
+        <span>Stand-up poetico</span>
+        <span>Teatro popular</span>
+        <span>Eventos privados</span>
+        <span>Merch oficial</span>
+      </section>
+
+      <section class="section dates-section" id="datas">
+        <div class="section-heading">
+          <p class="eyebrow">Agenda</p>
+          <h2>Proximas datas</h2>
+          <p>Eventos ficticios de exemplo, prontos a trocar por datas reais.</p>
+        </div>
+        <div class="dates-list">
+          <article class="date-card">
+            <time datetime="2026-05-16">
+              <span>16</span>
+              Mai
+            </time>
+            <div>
+              <h3>Riso em Verso</h3>
+              <p>Teatro Municipal, Coimbra</p>
+            </div>
+            <a class="small-link" href="#contactos">Reservar</a>
+          </article>
+          <article class="date-card">
+            <time datetime="2026-06-07">
+              <span>07</span>
+              Jun
+            </time>
+            <div>
+              <h3>Noite de Poesia Malcomportada</h3>
+              <p>Clube Estefania, Lisboa</p>
+            </div>
+            <a class="small-link" href="#contactos">Bilhetes</a>
+          </article>
+          <article class="date-card">
+            <time datetime="2026-07-25">
+              <span>25</span>
+              Jul
+            </time>
+            <div>
+              <h3>Chico na Feira</h3>
+              <p>Festival de Verao, Aveiro</p>
+            </div>
+            <a class="small-link" href="#contactos">Info</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section work-section" id="trabalhos">
+        <div class="section-heading">
+          <p class="eyebrow">Palco e palavra</p>
+          <h2>Trabalhos</h2>
+          <p>Formatos pensados para salas, bares, festivais, empresas e programacoes culturais.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-item highlight">
+            <span>01</span>
+            <h3>Espetaculo solo</h3>
+            <p>Uma hora de comedia, poesia e observacao social, com ritmo de palco e alma de rua.</p>
+          </article>
+          <article class="work-item">
+            <span>02</span>
+            <h3>Mestre de cerimonias</h3>
+            <p>Apresentacao de eventos com improviso, humor e ligacao natural ao publico.</p>
+          </article>
+          <article class="work-item">
+            <span>03</span>
+            <h3>Texto e performance</h3>
+            <p>Pecas curtas, intervencoes poeticas e momentos escritos para marcas ou festivais.</p>
+          </article>
+          <article class="work-item">
+            <span>04</span>
+            <h3>Workshops</h3>
+            <p>Expressao oral, escrita performativa e tecnicas para transformar ideias em palco.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shop-section" id="loja">
+        <div class="shop-top">
+          <div class="section-heading">
+            <p class="eyebrow">Loja</p>
+            <h2>Produtos oficiais</h2>
+            <p>Montra estilo WooCommerce com carrinho simulado, filtros e total instantaneo.</p>
+          </div>
+          <div class="shop-filter" role="tablist" aria-label="Filtro de produtos">
+            <button class="filter-button active" type="button" data-filter="todos">Todos</button>
+            <button class="filter-button" type="button" data-filter="vestuario">Vestuario</button>
+            <button class="filter-button" type="button" data-filter="papel">Papel</button>
+            <button class="filter-button" type="button" data-filter="digital">Digital</button>
+          </div>
+        </div>
+        <div class="shop-layout">
+          <div class="products" aria-live="polite">
+            <article class="product-card" data-category="vestuario">
+              <div class="product-media orange">T</div>
+              <div class="product-body">
+                <p class="product-category">Vestuario</p>
+                <h3>T-shirt Verdade com Riso</h3>
+                <p>Camisola algodao premium, estampagem frontal.</p>
+                <div class="product-buy">
+                  <strong>22,00 EUR</strong>
+                  <button type="button" data-name="T-shirt Verdade com Riso" data-price="22">Adicionar</button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-category="papel">
+              <div class="product-media ink">P</div>
+              <div class="product-body">
+                <p class="product-category">Papel</p>
+                <h3>Livro Pequenos Desabafos</h3>
+                <p>Coletanea de textos, poemas e notas de palco.</p>
+                <div class="product-buy">
+                  <strong>14,50 EUR</strong>
+                  <button type="button" data-name="Livro Pequenos Desabafos" data-price="14.5">Adicionar</button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-category="digital">
+              <div class="product-media teal">A</div>
+              <div class="product-body">
+                <p class="product-category">Digital</p>
+                <h3>Album Ao Vivo</h3>
+                <p>Audio integral de uma noite de comedia poetica.</p>
+                <div class="product-buy">
+                  <strong>8,00 EUR</strong>
+                  <button type="button" data-name="Album Ao Vivo" data-price="8">Adicionar</button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card" data-category="papel">
+              <div class="product-media lime">C</div>
+              <div class="product-body">
+                <p class="product-category">Papel</p>
+                <h3>Pack Cartazes Assinados</h3>
+                <p>Tres impressoes A3 numeradas e assinadas.</p>
+                <div class="product-buy">
+                  <strong>30,00 EUR</strong>
+                  <button type="button" data-name="Pack Cartazes Assinados" data-price="30">Adicionar</button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <aside class="cart" aria-label="Carrinho de compras">
+            <h3>Carrinho</h3>
+            <div class="cart-items" id="cart-items">
+              <p class="empty-cart">Ainda sem produtos.</p>
+            </div>
+            <div class="cart-total">
+              <span>Total</span>
+              <strong id="cart-total">0,00 EUR</strong>
+            </div>
+            <a class="button primary checkout" href="#contactos">Finalizar encomenda</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section about-section" id="sobre">
+        <div class="about-copy">
+          <p class="eyebrow">Sobre</p>
+          <h2>A gargalhada tambem diz a verdade.</h2>
+          <p>
+            Chico da Poesia mistura comedia, teatro e palavra falada num registo direto,
+            popular e emocional. Cada apresentacao procura esse ponto raro onde a sala ri,
+            reconhece qualquer coisa sua e sai com uma frase presa na memoria.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div>
+            <strong>60 min</strong>
+            <span>Formato solo</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>Tipos de atuacao</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>Presenca ao vivo</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contactos">
+        <div class="section-heading">
+          <p class="eyebrow">Contactos</p>
+          <h2>Marcar espetaculo ou encomendar</h2>
+          <p>Formulario visual. Para envio real, basta ligar a um servico de email ou backend.</p>
+        </div>
+        <div class="contact-layout">
+          <form class="contact-form">
+            <label>
+              Nome
+              <input type="text" name="nome" placeholder="O seu nome">
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="email@exemplo.pt">
+            </label>
+            <label>
+              Assunto
+              <select name="assunto">
+                <option>Contratar espetaculo</option>
+                <option>Encomenda da loja</option>
+                <option>Imprensa</option>
+                <option>Outro assunto</option>
+              </select>
+            </label>
+            <label>
+              Mensagem
+              <textarea name="mensagem" rows="5" placeholder="Conte-me o que precisa."></textarea>
+            </label>
+            <button class="button primary" type="submit">Enviar pedido</button>
+          </form>
+          <div class="contact-panel">
+            <h3>Direto ao palco</h3>
+            <p><strong>Email</strong> geral@chicodapoesia.pt</p>
+            <p><strong>Telefone</strong> +351 900 000 000</p>
+            <p><strong>Instagram</strong> @chicodapoesia</p>
+            <p class="note">Substitua estes contactos pelos oficiais antes de publicar.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Chico da Poesia</span>
+      <a href="#inicio">Voltar ao topo</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
